@@ -4,6 +4,29 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+#jianluetu{
+
+	cursor: pointer;
+	opacity: 20;
+	position:relative;
+	opacity: 0;
+	top:-48px;
+	font-size: 0px;
+}
+#zhidingtu{
+	opacity: 20;
+	position:relative;
+	opacity: 0;
+	top:-48px;
+	font-size: 0px;
+}
+#jianluetu:hover{
+	cursor:pointer;
+}
+#zhidingtu:hover{
+	cursor:pointer;
+}
+
 body{
 	background:url(../images/back.jpg);
 	font-family: 'Open Sans', sans-serif;
@@ -817,11 +840,15 @@ p.message-para{
 	outline:none;
 	border: 1px solid #a6a9b4;
 }
+.contact-grid img{
+	margin: 1em 0;
+}
 .contact-left textarea{
 	resize:none;
-	width: 98%;
+	width: 100%;
 	padding: 1em;
-	margin: 1em ;
+	margin: 1em 0;
+	border-radius:5px;
 	outline:none;
 	border:  1px solid #a6a9b4;
 }
@@ -1317,10 +1344,6 @@ a.more-dummy {
 }
 p.your-para, p.message-para {
 	font-size: 1em;
-}
-.contact-grid input[type="text"] {
-	padding: 0.7em;
-	margin:0.5em 0;
 }
 .map iframe{
 	height:150px;

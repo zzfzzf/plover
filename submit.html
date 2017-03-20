@@ -25,6 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'><!--//fonts-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+<script src="js/ajaxfileupload.js" type="text/javascript"></script>
 </head>
 <body>
 <!--header-->
@@ -88,34 +89,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="contact-left">
 				  	<h2>SHOW</h2>
 					    <form>
-								<div class="grid-contact">
-								<div class="col-md-12 has-warning has-feedback" >
-									<div class="col-md-4 contact-grid">
+
+								<div class="col-md-6 contact-grid">
+									<div class="col-md-12">
 										<p class="your-para">您的昵称</p>
 										<input class="form-control" type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
 									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="col-md-4 contact-grid">
+									<div class="col-md-12">
 										<p class="your-para">您的邮箱</p>
 										<input class="form-control" type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
 									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="col-md-4 input-group">
-										 <span class="input-group-addon">网络连接</span>
+									<div class="col-md-12">
+										<p class="your-para">您的链接</p>
 										<input class="form-control" type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
 									</div>
+
 								</div>
-								
-								<div class="col-md-12">
-									<div class="col-md-12 contact-grid">
-										<p class="your-para">您的信息</p>
-										<textarea cols="10" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = '';}"></textarea>
+						<div class="col-md-6 contact-grid">
+							<div class="col-md-6">
+								<p class="your-para">简略图</p>
+								<img src="images/ban.jpg" style="height: 210px;width:100%;margin-top:10px;">
+								<div class="input-group">
+										<span class="input-group-btn">
+											<Button class="btn btn-success" style="height: 34px;">选择文件</Button>
+										</span>
+											<input class="form-control" type="text">
 									</div>
+
+									<input id="jianluetu" class="form-control" type="file" name="" />
+
+							</div>
+							<div class="col-md-6">
+									<p class="your-para">置顶图</p>
+									<img src="images/ban.jpg" style="height: 210px;width:100%;margin-top:10px;">
+								<div class="input-group" >
+										<span class="input-group-btn">
+											<Button class="btn btn-success" style="height: 34px;">选择文件</Button>
+										</span>
+									<input class="form-control" type="text">
 								</div>
-							
-								</div>
+								<input  id="zhidingtu" class="form-control" type="file" name="" value="ddd" id="" />
+							</div>
+						</div>
+
+								<div class="col-md-12 contact-grid">
+									<div class="col-md-12">
+										<p class="your-para">您的信息</p>
+										<textarea cols="12" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = '';}"></textarea>
+									</div>
+									</div>
+
 								<div class="send">
 								<input type="submit" value="Send">
 								</div>
@@ -131,21 +154,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			 <script type="text/javascript">
 						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
-							
 							$().UItoTop({ easingType: 'easeOutQuart' });
-							
+							$("#jianluetu").change(function () {
+								$.ajaxFileUpload
+								(
+										{
+											url: 'http://127.0.0.1:8080/plover/upload', //用于文件上传的服务器端请求地址
+											secureuri: false, //是否需要安全协议，一般设置为false
+											fileElementId: 'jianluetu', //文件上传域的ID
+											dataType: 'json', //返回值类型 一般设置为json
+											success: function (data, status)  //服务器成功响应处理函数
+											{
+												ale
+											},
+											error: function (data, status, e)//服务器响应失败处理函数
+											{
+												alert(e);
+											}
+										}
+								)
+								return false;
+							});
 						});
 					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;">xxxxxxxxxxxxxxxxx </span></a>
 		</div>
 
 </body>
